@@ -19,7 +19,7 @@ async function run() {
   try {
     await client.connect();
     const todosCollection = client.db("AllTodo").collection("todos");
-    app.get("/todos", async (req, res) => {
+    app.get("/todos", async (_req, res) => {
       const query = {};
       const cursor = todosCollection.find(query);
       const todos = await cursor.toArray();
@@ -32,7 +32,6 @@ async function run() {
     });
     app.put("/todos/:id", async (req, res) => {
       const id = req.params.id;
-      console.log(id);
       const todo = req.body;
 
       const filter = { _id: ObjectId(id) };
@@ -54,6 +53,9 @@ async function run() {
   }
 }
 run().catch(console.dir);
+app.get("/", (_req, res) => {
+  res.send("todo crud server running");
+});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
