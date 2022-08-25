@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "title": "Learn React JS",
+    "completed": true
+  },
+  {
+    "id": 2,
+    "title": "Learn Redux",
+    "completed": false,
+    "color": "red"
+  },
+  {
+    "id": 3,
+    "title": "Learn Node JS",
+    "completed": false,
+    "color": "red"
+  },
+  {
+    "id": 4,
+    "title": "Learn MongoDB",
+    "completed": false,
+    "color": "red"
+  }
+]
